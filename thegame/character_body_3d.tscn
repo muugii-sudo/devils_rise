@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://di4kocpjb84ov"]
+[gd_scene load_steps=5 format=3 uid="uid://di4kocpjb84ov"]
 
 [ext_resource type="Script" uid="uid://bnpa8bcebvrx7" path="res://player.gd" id="1_iwpo4"]
-[ext_resource type="Script" uid="uid://bbb2ofg27t65q" path="res://ray_cast_3d.gd" id="2_fb3t6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fb3t6"]
 size = Vector3(0.2, 0.2, 1)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iwpo4"]
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fb3t6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iwpo4"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_iwpo4")
@@ -16,7 +15,7 @@ script = ExtResource("1_iwpo4")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.630354, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.309241, -0.365144, -0.59038)
 mesh = SubResource("BoxMesh_fb3t6")
 
@@ -24,11 +23,10 @@ mesh = SubResource("BoxMesh_fb3t6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.317359, -0.365144, -0.59038)
 mesh = SubResource("BoxMesh_fb3t6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_iwpo4")
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
-script = ExtResource("2_fb3t6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_fb3t6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_iwpo4")
