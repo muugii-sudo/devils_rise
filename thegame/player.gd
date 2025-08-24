@@ -19,7 +19,7 @@ func _input(event):
 func _physics_process(delta):
 	var input_dir = Vector3.ZERO
 	input_dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_dir.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
+	input_dir.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
 	input_dir = input_dir.normalized().rotated(Vector3.UP, yaw)
 	velocity.x = input_dir.x * speed
 	velocity.z = input_dir.z * speed
