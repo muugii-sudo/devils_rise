@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://di4kocpjb84ov"]
+[gd_scene load_steps=4 format=3 uid="uid://di4kocpjb84ov"]
 
 [ext_resource type="Script" uid="uid://bnpa8bcebvrx7" path="res://player.gd" id="1_iwpo4"]
-[ext_resource type="PackedScene" uid="uid://deahpthqgi6s6" path="res://arm.blend" id="2_fb3t6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fb3t6"]
 
@@ -21,6 +20,3 @@ mesh = SubResource("CapsuleMesh_fb3t6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_iwpo4")
-
-[node name="arm2" parent="." instance=ExtResource("2_fb3t6")]
-transform = Transform3D(0.0109947, -1.79862e-08, 0.499879, -0.498358, 0.0389773, 0.0109612, -0.0389678, -0.498478, 0.000857065, -0.0790578, 0.321916, -0.701778)
