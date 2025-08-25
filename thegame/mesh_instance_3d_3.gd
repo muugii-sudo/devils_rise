@@ -1,5 +1,7 @@
 extends MeshInstance3D
 
+var arm_speed = 1
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

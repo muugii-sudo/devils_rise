@@ -6,7 +6,11 @@ extends RigidBody3D
 var pitch := 0.0
 var is_ragdoll := false
 var yaw_input := 0.0
+var is_grappling = false
+var grapple_point: Vector3
 
+@onready var arm_ray = $RayCast3D 
+@onready var arm = $RightArm2
 @onready var cam := $Camera3D
 
 func _ready():
@@ -19,6 +23,9 @@ func _input(event):
 		pitch -= event.relative.y * mouse_sensitivity
 		pitch = clamp(pitch, -1.3, 1.3)
 		cam.rotation.x = pitch
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT && event.pressed:
+			arm._extend()
 
 	if event.is_action_pressed("key_r"):
 		toggle_ragdoll()

@@ -1,10 +1,14 @@
 extends MeshInstance3D
 
+var arm_speed = 0
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
 	if event.is_action("lmb"):
-		position.z -= 0.5
+		arm_speed = 1
 	if event.is_action_released("lmb"):
-		position.z = -0.5
+		arm_speed = 0
+
+	
