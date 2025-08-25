@@ -11,7 +11,8 @@ var is_grappling := false
 var grapple_point: Vector3
 
 @onready var cam := $Camera3D
-@onready var arm := $RightArm2
+@onready var arm := $RightArm
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
