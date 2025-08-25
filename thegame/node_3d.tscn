@@ -21,11 +21,11 @@ size = Vector2(2, 20)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a202f"]
 data = PackedVector3Array(1, 0, 10, -1, 0, 10, 1, 0, -10, -1, 0, 10, -1, 0, -10, 1, 0, -10)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_a202f"]
-size = Vector2(20, 20)
+[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
+size = Vector3(20, 1, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_noarx"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+data = PackedVector3Array(-10, 0.5, 10, 10, 0.5, 10, -10, -0.5, 10, 10, 0.5, 10, 10, -0.5, 10, -10, -0.5, 10, 10, 0.5, -10, -10, 0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5, -10, 10, -0.5, -10, 10, 0.5, 10, 10, 0.5, -10, 10, -0.5, 10, 10, 0.5, -10, 10, -0.5, -10, 10, -0.5, 10, -10, 0.5, -10, -10, 0.5, 10, -10, -0.5, -10, -10, 0.5, 10, -10, -0.5, 10, -10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, 10, 0.5, -10, -10, 0.5, 10, -10, 0.5, -10, 10, 0.5, -10, -10, -0.5, 10, 10, -0.5, 10, -10, -0.5, -10, 10, -0.5, 10, 10, -0.5, -10, -10, -0.5, -10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a0tk4"]
 
@@ -49,8 +49,8 @@ mesh = SubResource("PlaneMesh_4xowi")
 shape = SubResource("ConcavePolygonShape3D_a202f")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6212)
-mesh = SubResource("PlaneMesh_a202f")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_noarx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
 
@@ -62,7 +62,7 @@ transform = Transform3D(0.999998, 0, -0.00188495, 0, 1, 0, 0.00188495, 0, 0.9999
 mesh = SubResource("PlaneMesh_a0tk4")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_a202f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12791, 4.53806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95296, 4.53806)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48142, 0.250401, 1.60352)
