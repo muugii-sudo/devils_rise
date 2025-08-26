@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwxl800jjd1jh"]
+[gd_scene load_steps=9 format=3 uid="uid://dwxl800jjd1jh"]
 
 [ext_resource type="Script" uid="uid://bb38dxl0bj0pr" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ptml4"]
-[ext_resource type="Resource" path="res://Terrain/data.hterrain" id="2_p0eop"]
+[ext_resource type="Resource" uid="uid://boyjjhkhkfclg" path="res://Terrain/data.hterrain" id="2_p0eop"]
 [ext_resource type="Script" uid="uid://xsyua0ifksv4" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_po3o5"]
+[ext_resource type="Texture2D" uid="uid://bhnbvtx7ag8pv" path="res://Terrain_slot0_albedo_bump.png" id="4_5ncm4"]
+[ext_resource type="Texture2D" uid="uid://dttu36l8ymqlg" path="res://Terrain_slot1_albedo_bump.png" id="5_2gove"]
+[ext_resource type="Texture2D" uid="uid://bbh8xifjljdqt" path="res://Terrain_slot0_normal_roughness.png" id="6_buyv6"]
+[ext_resource type="Texture2D" uid="uid://8btw86fqq0hk" path="res://Terrain_slot1_normal_roughness.png" id="7_gejy8"]
 
 [sub_resource type="Resource" id="Resource_74be2"]
 script = ExtResource("3_po3o5")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("4_5ncm4"), ExtResource("5_2gove")], [ExtResource("6_buyv6"), ExtResource("7_gejy8")]]
 
 [node name="HTerrain" type="Node3D"]
 script = ExtResource("1_ptml4")

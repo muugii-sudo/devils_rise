@@ -5,16 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://dwxl800jjd1jh" path="res://Terrain.tscn" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://dfb8rda301gd7" path="res://tree.glb" id="4_r3fl7"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r3fl7"]
+sky_horizon_color = Color(0.816507, 0.860295, 1.00995, 1)
+ground_bottom_color = Color(0.229423, 0.335577, 0.838205, 1)
+ground_horizon_color = Color(0.816507, 0.860295, 1.00995, 1)
 
-[sub_resource type="Sky" id="Sky_a202f"]
-sky_material = SubResource("ProceduralSkyMaterial_4xowi")
+[sub_resource type="Sky" id="Sky_jka67"]
+sky_material = SubResource("ProceduralSkyMaterial_r3fl7")
 
-[sub_resource type="Environment" id="Environment_noarx"]
+[sub_resource type="Environment" id="Environment_i5arm"]
 background_mode = 2
-sky = SubResource("Sky_a202f")
+sky = SubResource("Sky_jka67")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -37,12 +38,12 @@ points = PackedVector3Array(25.5952, 38.0952, 1.28571, -25.5952, -38.0952, -1.09
 
 [node name="Node3D" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.697165, -0.118324, 0.707079, 0, 0.986286, 0.165048, -0.716911, -0.115065, 0.687604, 0, 0, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_noarx")
+environment = SubResource("Environment_i5arm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.982613, -0.155536, 0.101393, 0, 0.546102, 0.837719, -0.185667, 0.823153, -0.536607, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500002, 0)
@@ -58,7 +59,7 @@ transform = Transform3D(0.999998, 0, -0.00188495, 0, 1, 0, 0.00188495, 0, 0.9999
 mesh = SubResource("PlaneMesh_a0tk4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04211, 138.716, 0.341644)
+transform = Transform3D(1, -0.000876308, -0.000171251, 0.000876076, 0.999999, -0.00135558, 0.000172433, 0.00135543, 0.999999, 1.04211, 138.716, 0.341644)
 material_override = SubResource("StandardMaterial3D_r3fl7")
 mesh = SubResource("BoxMesh_a202f")
 
@@ -78,7 +79,7 @@ mesh = SubResource("BoxMesh_a202f")
 shape = SubResource("ConvexPolygonShape3D_a0tk4")
 
 [node name="Player" parent="." instance=ExtResource("1_a202f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 105.6, 7.99066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.291, 2.03971, 362.308)
 
 [node name="HTerrain" parent="." instance=ExtResource("2_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500002, 0)
@@ -86,32 +87,71 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500002, 0)
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 137.381, 82.6684)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1200.0
+offset_bottom = 1200.0
+color = Color(0.230315, 0.230315, 0.230315, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "																
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																	YOU DIED		"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 31.0
+text = "RESTART"
+
 [node name="tree" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5158, 98.9091, 59.2775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5158, 96.5425, 59.2775)
 
-[node name="tree5" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.378568, 0, -0.925574, 0, 1, 0, 0.925574, 0, 0.378568, 64.709, 104.795, 59.2775)
+[node name="tree2" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.781999, 0, -0.623279, 0, 1, 0, 0.623279, 0, 0.781999, 17.4229, 0.895096, -40.3653)
 
-[node name="tree6" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.479427, 0, 0.877582, 0, 1, 0, -0.877582, 0, 0.479427, 41.441, 104.996, 91.9483)
+[node name="tree5" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.378568, 0, -0.925574, 0, 1, 0, 0.925574, 0, 0.378568, 138.225, 1.74121, 0)
 
-[node name="tree7" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(-0.954094, 0, -0.299507, 0, 1, 0, 0.299507, 0, -0.954094, 61.1394, 104.359, 80.0506)
+[node name="tree6" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.479427, 0, 0.877582, 0, 1, 0, -0.877582, 0, 0.479427, 114.957, -0.462967, 32.6708)
 
-[node name="tree8" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.595566, 0, -0.803306, 0, 1, 0, 0.803306, 0, 0.595566, 81.0086, 102.047, 89.3947)
+[node name="tree8" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.595566, 0, -0.803306, 0, 1, 0, 0.803306, 0, 0.595566, 154.524, -1.24821, 30.1171)
 
-[node name="tree9" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.596505, 0, 0.802609, -0.209232, 0.965423, 0.155503, -0.774857, -0.26069, 0.575879, 96.4998, 100.927, 60.4361)
+[node name="tree7" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(-0.954094, 0, -0.299507, 0, 1, 0, 0.299507, 0, -0.954094, 134.655, 0.311249, 20.773)
 
-[node name="tree10" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.232138, 0, 0.972683, 0, 1, 0, -0.972683, 0, 0.232138, 58.5728, 101.036, 12.1849)
+[node name="tree9" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.596505, 0, 0.802609, -0.209232, 0.965423, 0.155503, -0.774857, -0.26069, 0.575879, 170.016, 2.84975, 1.15853)
 
-[node name="tree2" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.781999, 0, -0.623279, 0, 1, 0, 0.623279, 0, 0.781999, -56.0929, 100.344, 18.9122)
+[node name="tree10" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.232138, 0, 0.972683, 0, 1, 0, -0.972683, 0, 0.232138, 132.089, 3.72484, -47.0926)
 
-[node name="tree3" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(0.885283, 0.134645, -0.445135, -0.150364, 0.988631, 0, 0.440075, 0.0669322, 0.895463, -33.1706, 99.3018, 90.1945)
+[node name="tree4" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(-0.850445, 0.0497878, 0.523703, 0.00233233, 0.995859, -0.0908875, -0.526059, -0.0760734, -0.847039, 76.9849, 3.37225, -3.71564)
 
-[node name="tree4" parent="." instance=ExtResource("4_r3fl7")]
-transform = Transform3D(-0.851928, 0.0442376, 0.521787, 0, 0.996425, -0.0844778, -0.523659, -0.0719691, -0.848883, 3.4691, 103.643, 55.5619)
+[node name="tree3" parent="tree" instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.885283, 0.134645, -0.445135, -0.150364, 0.988631, 0, 0.440075, 0.0669322, 0.895463, 40.6331, -1.87904, 31)
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="Player" method="_on_button_pressed"]
