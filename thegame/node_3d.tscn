@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dihe2alxjbq34"]
+[gd_scene load_steps=14 format=3 uid="uid://dihe2alxjbq34"]
 
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
-[ext_resource type="PackedScene" uid="uid://pnyddh22emav" path="res://Terrain.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://dwxl800jjd1jh" path="res://Terrain.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://dfb8rda301gd7" path="res://tree.glb" id="4_r3fl7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -81,3 +82,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 105.6, 7.99066)
 
 [node name="HTerrain" parent="." instance=ExtResource("2_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500002, 0)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 137.381, 82.6684)
+
+[node name="tree" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5158, 98.9091, 59.2775)
+
+[node name="tree5" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.378568, 0, -0.925574, 0, 1, 0, 0.925574, 0, 0.378568, 64.709, 104.795, 59.2775)
+
+[node name="tree6" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.479427, 0, 0.877582, 0, 1, 0, -0.877582, 0, 0.479427, 41.441, 104.996, 91.9483)
+
+[node name="tree7" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(-0.954094, 0, -0.299507, 0, 1, 0, 0.299507, 0, -0.954094, 61.1394, 104.359, 80.0506)
+
+[node name="tree8" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.595566, 0, -0.803306, 0, 1, 0, 0.803306, 0, 0.595566, 81.0086, 102.047, 89.3947)
+
+[node name="tree9" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.596505, 0, 0.802609, -0.209232, 0.965423, 0.155503, -0.774857, -0.26069, 0.575879, 96.4998, 100.927, 60.4361)
+
+[node name="tree10" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.232138, 0, 0.972683, 0, 1, 0, -0.972683, 0, 0.232138, 58.5728, 101.036, 12.1849)
+
+[node name="tree2" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.781999, 0, -0.623279, 0, 1, 0, 0.623279, 0, 0.781999, -56.0929, 100.344, 18.9122)
+
+[node name="tree3" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(0.885283, 0.134645, -0.445135, -0.150364, 0.988631, 0, 0.440075, 0.0669322, 0.895463, -33.1706, 99.3018, 90.1945)
+
+[node name="tree4" parent="." instance=ExtResource("4_r3fl7")]
+transform = Transform3D(-0.851928, 0.0442376, 0.521787, 0, 0.996425, -0.0844778, -0.523659, -0.0719691, -0.848883, 3.4691, 103.643, 55.5619)
