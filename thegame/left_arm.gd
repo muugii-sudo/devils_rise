@@ -9,12 +9,13 @@ var retracting := false
 var start_position := Vector3.ZERO
 var direction := Vector3.ZERO
 var grapple_point: Vector3
+var rest_offset := Vector3.ZERO 
 
 @onready var ray = $RayCast3D
 
 func _ready():
 	player = get_parent()
-	start_position = global_transform.origin
+	rest_offset = player.to_local(global_transform.origin)
 
 func extend():
 	if extending or retracting:
@@ -40,11 +41,10 @@ func _physics_process(delta):
 			retracting = true
 
 	elif retracting:
-		var hand_pos = player.global_transform.origin + Vector3.ZERO
-		var back_dir = (hand_pos - global_transform.origin).normalized()
-		var motion = back_dir * arm_speed * delta
-		if global_transform.origin.distance_to(hand_pos) <= 0.5:
+		var target_position = player.to_global(rest_offset)
+		
+		global_transform.origin = global_transform.origin.lerp(target_position, arm_speed * delta)
+		
+		if global_transform.origin.distance_to(target_position) <= 0.05:
 			retracting = false
-			global_transform.origin = hand_pos
-		else:
-			global_transform.origin += motion
+			global_transform.origin = target_position
