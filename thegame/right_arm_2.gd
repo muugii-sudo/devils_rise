@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var arm_speed := 15.0
-@export var max_distance := 20.0
+@export var max_distance := 15
 
 var player = null
 var extending := false

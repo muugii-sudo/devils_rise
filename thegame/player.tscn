@@ -18,6 +18,7 @@ points = PackedVector3Array(-0.0182264, -0.0978172, 0.0092536, 0.0184367, 0.0977
 [node name="Player" type="RigidBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+gravity_scale = 2.0
 can_sleep = false
 continuous_cd = true
 script = ExtResource("1_4flbx")
