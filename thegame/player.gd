@@ -11,7 +11,8 @@ var is_grappling := false
 var grapple_point: Vector3
 
 @onready var cam := $Camera3D
-@onready var arm := $RightArm
+@onready var right_arm := $RightArm
+@onready var left_arm := $LeftArm
 
 
 func _ready():
@@ -29,9 +30,15 @@ func _input(event):
 		toggle_ragdoll()
 	
 	if event.is_action_pressed("rmb"):
-		arm.extend()
+		right_arm.extend()
 	
 	if event.is_action_released("rmb"):
+		is_grappling = false
+		
+	if event.is_action_pressed("lmb"):
+		left_arm.extend()
+		
+	if event.is_action_released("lmb"):
 		is_grappling = false
 
 func _integrate_forces(_state):

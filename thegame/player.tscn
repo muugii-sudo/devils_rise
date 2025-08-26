@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://40uex1s5t7pt"]
+[gd_scene load_steps=8 format=3 uid="uid://40uex1s5t7pt"]
 
 [ext_resource type="Script" uid="uid://bnpa8bcebvrx7" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://mm8vs7ghlaqh" path="res://right_arm_2.gd" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://bth5qlve5203a" path="res://left_arm.gd" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
@@ -49,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11575, -0.842589)
 
 [node name="LeftArm" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.977457, 0, -0.00162268)
+script = ExtResource("3_i3pqv")
 
 [node name="RightArm" type="MeshInstance3D" parent="LeftArm"]
 transform = Transform3D(0.997401, 0.0719155, 0.00447413, 0.000280442, 0.0582188, -0.998304, -0.072054, 0.99571, 0.0580473, 0.496326, 1.33324, -0.678276)
