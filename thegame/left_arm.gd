@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var arm_speed := 15.0
+@export var arm_speed := 20
 @export var max_distance := 15
 
 var player = null
@@ -35,7 +35,7 @@ func _physics_process(delta):
 			player.is_grappling = true
 			player.grapple_point = grapple_point
 			return
-
+		
 		if global_transform.origin.distance_to(start_position) >= max_distance:
 			extending = false
 			retracting = true
