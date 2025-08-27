@@ -64,7 +64,6 @@ func _integrate_forces(_state):
 	
 	var is_on_ground = ground_check.is_colliding()
 	var was_on_ground = false
-	var start_height = 0
 	var safe_speed = 30
 	
 	if !was_on_ground and is_on_ground:

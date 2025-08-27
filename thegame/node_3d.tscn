@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dihe2alxjbq34"]
+[gd_scene load_steps=20 format=3 uid="uid://dihe2alxjbq34"]
 
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://dwxl800jjd1jh" path="res://Terrain.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://baehysdtb8q6" path="res://npc.tscn" id="4_6iypd"]
 [ext_resource type="PackedScene" uid="uid://dfb8rda301gd7" path="res://tree.glb" id="4_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://bef1o6f4uxa44" path="res://house.glb" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://8fbew62p03k7" path="res://house4.glb" id="6_jsk3o"]
@@ -157,5 +158,8 @@ transform = Transform3D(0.29156, 0, -0.911875, 0, 0.888916, 0, 0.829737, 0, 0.26
 transform = Transform3D(-0.178339, 0, -0.983969, 0, 1, 0, 0.983969, 0, -0.178339, -24.3721, 98.3285, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tower"]
+
+[node name="NPC" parent="." instance=ExtResource("4_6iypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.431, 0.587718, 333.059)
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="Player" method="_on_button_pressed"]

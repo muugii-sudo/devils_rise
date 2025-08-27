@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfbnndno35brl"]
+
+[ext_resource type="Script" uid="uid://s1rtqneh0iqu" path="res://SpeecBubble.gd" id="1_gm1uq"]
+
+[node name="SpeechBubble" type="Node3D"]
+script = ExtResource("1_gm1uq")
+
+[node name="Label3D" type="Label3D" parent="."]

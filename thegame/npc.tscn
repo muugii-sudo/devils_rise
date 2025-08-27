@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://baehysdtb8q6"]
+
+[ext_resource type="Script" uid="uid://d050dtpb7kegc" path="res://npc.gd" id="1_ideak"]
+[ext_resource type="Script" uid="uid://boyliwki2r1o4" path="res://npc_talk.gd" id="2_xxcha"]
+[ext_resource type="PackedScene" uid="uid://cfbnndno35brl" path="res://speech_bubble.tscn" id="3_kh24r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xxcha"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxcha"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kh24r"]
+material = SubResource("StandardMaterial3D_xxcha")
+size = Vector3(0.5, 0.2, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kh24r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kh24r"]
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_ideak")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_xxcha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448022, 0.0874393)
+mesh = SubResource("BoxMesh_kh24r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_kh24r")
+
+[node name="DetectionArea" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("2_xxcha")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("SphereShape3D_kh24r")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="SpeechBubble" parent="." instance=ExtResource("3_kh24r")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.43578, 0)
+visible = false
