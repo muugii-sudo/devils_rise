@@ -1,15 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://dihe2alxjbq34"]
+[gd_scene load_steps=21 format=3 uid="uid://dihe2alxjbq34"]
 
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://dwxl800jjd1jh" path="res://Terrain.tscn" id="2_noarx"]
-[ext_resource type="PackedScene" uid="uid://baehysdtb8q6" path="res://npc.tscn" id="4_6iypd"]
+[ext_resource type="PackedScene" path="res://npc.tscn" id="4_6iypd"]
 [ext_resource type="PackedScene" uid="uid://dfb8rda301gd7" path="res://tree.glb" id="4_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://bef1o6f4uxa44" path="res://house.glb" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://8fbew62p03k7" path="res://house4.glb" id="6_jsk3o"]
 [ext_resource type="PackedScene" uid="uid://c4yx4s8i0iyxo" path="res://house3.glb" id="7_4arys"]
 [ext_resource type="PackedScene" uid="uid://fvoah7u5j1nc" path="res://house2.glb" id="8_6iypd"]
 [ext_resource type="PackedScene" uid="uid://bm7anmo5eiv84" path="res://tower.glb" id="9_4arys"]
+[ext_resource type="PackedScene" uid="uid://80q3d084d67i" path="res://castle.glb" id="11_tereu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r3fl7"]
 sky_horizon_color = Color(0.816507, 0.860295, 1.00995, 1)
@@ -161,5 +162,8 @@ transform = Transform3D(-0.178339, 0, -0.983969, 0, 1, 0, 0.983969, 0, -0.178339
 
 [node name="NPC" parent="." instance=ExtResource("4_6iypd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.431, 0.587718, 333.059)
+
+[node name="castle" parent="." instance=ExtResource("11_tereu")]
+transform = Transform3D(0.187021, 0, 0.411483, 0, 0.45199, 0, -0.411483, 0, 0.187021, 323.874, 4.9904, 362.415)
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="Player" method="_on_button_pressed"]
