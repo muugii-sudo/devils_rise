@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dihe2alxjbq34"]
+[gd_scene load_steps=23 format=3 uid="uid://dihe2alxjbq34"]
 
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
@@ -42,6 +42,11 @@ size = Vector3(50, 75, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a0tk4"]
 points = PackedVector3Array(25.5952, 38.0952, 1.28571, -25.5952, -38.0952, -1.09524, -25.5952, -38.0952, 1.28571, -25.5952, 38.0952, -1.09524, 25.5952, -38.0952, -1.09524, 25.5952, -38.0952, 1.28571, -25.5952, 38.0952, 1.28571, 25.5952, 38.0952, -1.09524)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tereu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cdqbm"]
+points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
 
 [node name="Node3D" type="Node3D"]
 
@@ -94,9 +99,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.291, 2.03971, 362.308)
 [node name="HTerrain" parent="." instance=ExtResource("2_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500002, 0)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 137.381, 82.6684)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -134,26 +136,8 @@ offset_right = 75.0
 offset_bottom = 31.0
 text = "RESTART"
 
-[node name="tree2" parent="." instance=ExtResource("4_r3fl7")]
+[node name="tree" parent="." instance=ExtResource("4_r3fl7")]
 transform = Transform3D(0.783899, -0.00383294, -0.620876, -0.0777999, 0.991493, -0.104349, 0.615994, 0.130103, 0.776932, -310.403, -0.738112, 341.443)
-
-[node name="house" parent="." instance=ExtResource("5_jka67")]
-transform = Transform3D(0.164206, 0, 0.564405, 0, 0.580689, 0, -0.513566, 0, 0.180461, -305.035, -0.132424, 329.315)
-
-[node name="house4" parent="house" instance=ExtResource("6_jsk3o")]
-transform = Transform3D(0.0101675, 0, 0.835602, 0, 0.78394, 0, -0.775545, 0, 0.0568245, -23.2043, 0.187886, 55.1985)
-
-[node name="house3" parent="house" instance=ExtResource("7_4arys")]
-transform = Transform3D(-0.320231, 0, -0.886623, 0, 0.908501, 0, 0.839871, 0, -0.394942, 22.3875, -0.166662, 94.6455)
-
-[node name="house3" parent="house/house3" instance=ExtResource("7_4arys")]
-transform = Transform3D(0.150536, 0, 0.946561, 0, 0.908501, 0, -0.886154, 0, 0.214712, -129.469, -0.166662, 4.08905)
-
-[node name="house2" parent="house" instance=ExtResource("8_6iypd")]
-transform = Transform3D(0.29156, 0, -0.911875, 0, 0.888916, 0, 0.829737, 0, 0.265298, 47.4851, -0.119357, 42.3127)
-
-[node name="house2" parent="house/house2" instance=ExtResource("8_6iypd")]
-transform = Transform3D(0.29156, 0, -0.911875, 0, 0.888916, 0, 0.829737, 0, 0.265298, 144.3, -0.119357, 84.3561)
 
 [node name="tower" parent="." instance=ExtResource("9_4arys")]
 transform = Transform3D(-0.178339, 0, -0.983969, 0, 1, 0, 0.983969, 0, -0.178339, -24.3721, 98.3285, 0)
@@ -163,7 +147,1924 @@ transform = Transform3D(-0.178339, 0, -0.983969, 0, 1, 0, 0.983969, 0, -0.178339
 [node name="NPC" parent="." instance=ExtResource("4_6iypd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.431, 0.587718, 333.059)
 
-[node name="castle" parent="." instance=ExtResource("11_tereu")]
-transform = Transform3D(0.187021, 0, 0.411483, 0, 0.45199, 0, -0.411483, 0, 0.187021, 323.874, 4.9904, 362.415)
+[node name="Village" type="MeshInstance3D" parent="."]
+
+[node name="playerHouse" parent="Village" instance=ExtResource("5_jka67")]
+transform = Transform3D(0.164206, 0, 0.564405, 0, 0.580689, 0, -0.513566, 0, 0.180461, -305.035, -0.132424, 329.315)
+
+[node name="HouseCollision2" type="MeshInstance3D" parent="Village/playerHouse"]
+transform = Transform3D(7.28449, 0.180904, 0.0342134, 0.0391126, 0.0925845, -5.04194, -0.2047, 5.3472, 0.0828799, -0.383911, 5.09807, -9.30289)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(0.378358, -2.98023e-07, 3.55067e-09, -1.49012e-08, 1.193, -1.44646e-08, -1.57161e-09, -3.6729e-08, 1.20316, 0.663742, 3.76521, 0.0616589)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(0.378358, -2.98023e-07, 5.3551e-09, -2.23517e-08, 1.193, -1.51049e-08, -2.64845e-09, -3.67581e-08, 1.20316, -0.723801, 3.60494, 0.0479529)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(-0.0051927, -0.0804594, 1.2003, 0.00643585, 1.19009, 0.0814203, -0.378268, 0.0213529, -0.015092, -0.090332, 3.7488, -0.549239)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(-0.00524884, -0.0982383, 0.438113, 0.00650541, 1.45306, 0.0297186, -0.382357, 0.0260713, -0.0055086, -0.0870285, 3.76083, -1.31724)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/playerHouse/HouseCollision2"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/playerHouse/HouseCollision2/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="bigHouse" parent="Village" instance=ExtResource("6_jsk3o")]
+transform = Transform3D(-0.436052, 0, 0.169283, 0, 0.455225, 0, -0.145177, 0, -0.418882, -271.071, -0.0233207, 354.016)
+
+[node name="HouseCollision3" type="MeshInstance3D" parent="Village/bigHouse"]
+transform = Transform3D(-1.53629, 9.44098, -0.189987, 0.233499, -0.240822, -7.05797, -13.0301, -0.558956, -0.118219, -19.1162, 8.82418, -12.5291)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3"]
+transform = Transform3D(1.06525, -0.222468, 0.0068297, 0.222416, 1.06525, 0.00814303, -0.00835003, -0.00657504, 1.08821, -0.115997, 3.98556, 0.135897)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="HouseCollision24" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3"]
+transform = Transform3D(-0.110013, -0.480922, -0.0138455, 0.909023, -0.107029, 0.016052, -0.0437188, -0.0272033, 0.707637, 0.00402832, 2.22187, 0.585719)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse/HouseCollision3/HouseCollision24/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="bigHouse5" parent="Village" instance=ExtResource("6_jsk3o")]
+transform = Transform3D(0.409563, 0, 0.179356, 0, 0.455225, 0, -0.208508, 0, 0.414669, -242.871, -0.0233207, 294.706)
+
+[node name="HouseCollision3" type="MeshInstance3D" parent="Village/bigHouse5"]
+transform = Transform3D(-1.53629, 9.44098, -0.189987, 0.233499, -0.240822, -7.05797, -13.0301, -0.558956, -0.118219, -19.1162, 8.82418, -12.5291)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3"]
+transform = Transform3D(1.06525, -0.222468, 0.0068297, 0.222416, 1.06525, 0.00814303, -0.00835003, -0.00657504, 1.08821, -0.115997, 3.98556, 0.135897)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="HouseCollision24" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3"]
+transform = Transform3D(-0.110013, -0.480922, -0.0138455, 0.909023, -0.107029, 0.016052, -0.0437188, -0.0272033, 0.707637, 0.00402832, 2.22187, 0.585719)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse5/HouseCollision3/HouseCollision24/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="bigHouse4" parent="Village" instance=ExtResource("6_jsk3o")]
+transform = Transform3D(-0.0617731, 0, 0.45062, 0, 0.455225, 0, -0.455414, 0, -0.0325687, -344.059, -0.0233207, 269.695)
+
+[node name="HouseCollision3" type="MeshInstance3D" parent="Village/bigHouse4"]
+transform = Transform3D(-1.53629, 9.44098, -0.189987, 0.233499, -0.240822, -7.05797, -13.0301, -0.558956, -0.118219, -19.1162, 8.82418, -12.5291)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3"]
+transform = Transform3D(1.06525, -0.222468, 0.0068297, 0.222416, 1.06525, 0.00814303, -0.00835003, -0.00657504, 1.08821, -0.115997, 3.98556, 0.135897)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="HouseCollision24" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3"]
+transform = Transform3D(-0.110013, -0.480922, -0.0138455, 0.909023, -0.107029, 0.016052, -0.0437188, -0.0272033, 0.707637, 0.00402832, 2.22187, 0.585719)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse4/HouseCollision3/HouseCollision24/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="bigHouse3" parent="Village" instance=ExtResource("6_jsk3o")]
+transform = Transform3D(0.378244, 0, -0.279413, 0, 0.455225, 0, 0.261054, 0, 0.355031, -271.071, -0.0233207, 251.083)
+
+[node name="HouseCollision3" type="MeshInstance3D" parent="Village/bigHouse3"]
+transform = Transform3D(-1.53629, 9.44098, -0.189987, 0.233499, -0.240822, -7.05797, -13.0301, -0.558956, -0.118219, -19.1162, 8.82418, -12.5291)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3"]
+transform = Transform3D(1.06525, -0.222468, 0.0068297, 0.222416, 1.06525, 0.00814303, -0.00835003, -0.00657504, 1.08821, -0.115997, 3.98556, 0.135897)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="HouseCollision24" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3"]
+transform = Transform3D(-0.110013, -0.480922, -0.0138455, 0.909023, -0.107029, 0.016052, -0.0437188, -0.0272033, 0.707637, 0.00402832, 2.22187, 0.585719)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse3/HouseCollision3/HouseCollision24/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="bigHouse2" parent="Village" instance=ExtResource("6_jsk3o")]
+transform = Transform3D(0.232832, 0, -0.403096, 0, 0.455225, 0, 0.396241, 0, 0.204041, -196.038, -0.0233207, 362.383)
+
+[node name="HouseCollision3" type="MeshInstance3D" parent="Village/bigHouse2"]
+transform = Transform3D(-1.53629, 9.44098, -0.189987, 0.233499, -0.240822, -7.05797, -13.0301, -0.558956, -0.118219, -19.1162, 8.82418, -12.5291)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3"]
+transform = Transform3D(1.06525, -0.222468, 0.0068297, 0.222416, 1.06525, 0.00814303, -0.00835003, -0.00657504, 1.08821, -0.115997, 3.98556, 0.135897)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="HouseCollision24" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3"]
+transform = Transform3D(-0.110013, -0.480922, -0.0138455, 0.909023, -0.107029, 0.016052, -0.0437188, -0.0272033, 0.707637, 0.00402832, 2.22187, 0.585719)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/bigHouse2/HouseCollision3/HouseCollision24/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="tallHouse" parent="Village" instance=ExtResource("7_4arys")]
+transform = Transform3D(0.280463, 0, -0.481524, 0, 0.527557, 0, 0.445899, 0, 0.226787, -256.009, -0.229203, 331.71)
+
+[node name="HouseCollision2" type="MeshInstance3D" parent="Village/tallHouse"]
+transform = Transform3D(7.10606, 0.390296, 0.0285098, 0.0408305, 0.0854823, -3.99904, 0.312885, 5.02776, 0.0686812, -1.9024, 3.49286, -9.79279)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.0492435, -0.591624, -0.639527, 1.32635, -0.023947, -0.0521739, 0.0230252, -1.50072, 0.788114, 0.985035, 1.70221, -5.30844)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(0.0248647, 0.623048, 0.623831, -1.32681, 0.0765849, 0.00652096, -0.0329314, -1.48617, 0.802266, 2.32064, 1.60468, -5.25485)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(0.0950243, 0.496576, -0.0193608, -1.10818, 0.0606383, -0.0938544, -0.0308298, -0.00859392, 2.84086, 2.81433, 1.47534, -1.73491)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(0.937778, 0.0342495, 0.0331912, -0.0580419, 0.621976, -0.0720138, -0.00122377, 0.000285193, 3.34322, 1.62597, 2.87126, -1.831)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.938593, -0.0185222, -0.0557276, 0.0120166, -0.62292, -0.0201604, -0.0188841, -0.0268642, 3.34342, 1.72276, 0.292038, -1.75077)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Village/tallHouse/HouseCollision2"]
+transform = Transform3D(-0.0737252, -0.444568, 0.00278765, 1.31132, -0.0283572, 0.0196915, 0.0177198, -0.0185049, 3.34487, 0.591125, 1.58679, -1.25816)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse/HouseCollision2/MeshInstance3D14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="tallHouse5" parent="Village" instance=ExtResource("7_4arys")]
+transform = Transform3D(-0.155785, 0, -0.485666, 0, 0.527557, 0, 0.503206, 0, -0.217774, -312.384, -0.229203, 229.23)
+
+[node name="HouseCollision2" type="MeshInstance3D" parent="Village/tallHouse5"]
+transform = Transform3D(7.10606, 0.390296, 0.0285098, 0.0408305, 0.0854823, -3.99904, 0.312885, 5.02776, 0.0686812, -1.9024, 3.49286, -9.79279)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.0492435, -0.591624, -0.639527, 1.32635, -0.023947, -0.0521739, 0.0230252, -1.50072, 0.788114, 0.985035, 1.70221, -5.30844)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(0.0248647, 0.623048, 0.623831, -1.32681, 0.0765849, 0.00652096, -0.0329314, -1.48617, 0.802266, 2.32064, 1.60468, -5.25485)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(0.0950243, 0.496576, -0.0193608, -1.10818, 0.0606383, -0.0938544, -0.0308298, -0.00859392, 2.84086, 2.81433, 1.47534, -1.73491)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(0.937778, 0.0342495, 0.0331912, -0.0580419, 0.621976, -0.0720138, -0.00122377, 0.000285193, 3.34322, 1.62597, 2.87126, -1.831)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.938593, -0.0185222, -0.0557276, 0.0120166, -0.62292, -0.0201604, -0.0188841, -0.0268642, 3.34342, 1.72276, 0.292038, -1.75077)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Village/tallHouse5/HouseCollision2"]
+transform = Transform3D(-0.0737252, -0.444568, 0.00278765, 1.31132, -0.0283572, 0.0196915, 0.0177198, -0.0185049, 3.34487, 0.591125, 1.58679, -1.25816)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse5/HouseCollision2/MeshInstance3D14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="tallHouse4" parent="Village" instance=ExtResource("7_4arys")]
+transform = Transform3D(0.526718, 0, -0.0717351, 0, 0.527557, 0, 0.00731588, 0, 0.527401, -303.601, -0.229203, 288.279)
+
+[node name="HouseCollision2" type="MeshInstance3D" parent="Village/tallHouse4"]
+transform = Transform3D(7.10606, 0.390296, 0.0285098, 0.0408305, 0.0854823, -3.99904, 0.312885, 5.02776, 0.0686812, -1.9024, 3.49286, -9.79279)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.0492435, -0.591624, -0.639527, 1.32635, -0.023947, -0.0521739, 0.0230252, -1.50072, 0.788114, 0.985035, 1.70221, -5.30844)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(0.0248647, 0.623048, 0.623831, -1.32681, 0.0765849, 0.00652096, -0.0329314, -1.48617, 0.802266, 2.32064, 1.60468, -5.25485)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(0.0950243, 0.496576, -0.0193608, -1.10818, 0.0606383, -0.0938544, -0.0308298, -0.00859392, 2.84086, 2.81433, 1.47534, -1.73491)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(0.937778, 0.0342495, 0.0331912, -0.0580419, 0.621976, -0.0720138, -0.00122377, 0.000285193, 3.34322, 1.62597, 2.87126, -1.831)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.938593, -0.0185222, -0.0557276, 0.0120166, -0.62292, -0.0201604, -0.0188841, -0.0268642, 3.34342, 1.72276, 0.292038, -1.75077)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Village/tallHouse4/HouseCollision2"]
+transform = Transform3D(-0.0737252, -0.444568, 0.00278765, 1.31132, -0.0283572, 0.0196915, 0.0177198, -0.0185049, 3.34487, 0.591125, 1.58679, -1.25816)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse4/HouseCollision2/MeshInstance3D14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="tallHouse3" parent="Village" instance=ExtResource("7_4arys")]
+transform = Transform3D(0.423528, 0, 0.262382, 0, 0.527557, 0, -0.313225, 0, 0.463091, -340.431, -0.229203, 216.086)
+
+[node name="HouseCollision2" type="MeshInstance3D" parent="Village/tallHouse3"]
+transform = Transform3D(7.10606, 0.390296, 0.0285098, 0.0408305, 0.0854823, -3.99904, 0.312885, 5.02776, 0.0686812, -1.9024, 3.49286, -9.79279)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.0492435, -0.591624, -0.639527, 1.32635, -0.023947, -0.0521739, 0.0230252, -1.50072, 0.788114, 0.985035, 1.70221, -5.30844)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(0.0248647, 0.623048, 0.623831, -1.32681, 0.0765849, 0.00652096, -0.0329314, -1.48617, 0.802266, 2.32064, 1.60468, -5.25485)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(0.0950243, 0.496576, -0.0193608, -1.10818, 0.0606383, -0.0938544, -0.0308298, -0.00859392, 2.84086, 2.81433, 1.47534, -1.73491)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(0.937778, 0.0342495, 0.0331912, -0.0580419, 0.621976, -0.0720138, -0.00122377, 0.000285193, 3.34322, 1.62597, 2.87126, -1.831)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.938593, -0.0185222, -0.0557276, 0.0120166, -0.62292, -0.0201604, -0.0188841, -0.0268642, 3.34342, 1.72276, 0.292038, -1.75077)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Village/tallHouse3/HouseCollision2"]
+transform = Transform3D(-0.0737252, -0.444568, 0.00278765, 1.31132, -0.0283572, 0.0196915, 0.0177198, -0.0185049, 3.34487, 0.591125, 1.58679, -1.25816)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse3/HouseCollision2/MeshInstance3D14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="tallHouse2" parent="Village" instance=ExtResource("7_4arys")]
+transform = Transform3D(-0.463888, 0, 0.30705, 0, 0.527557, 0, -0.249587, 0, -0.434762, -247.301, -0.229203, 366.527)
+
+[node name="HouseCollision2" type="MeshInstance3D" parent="Village/tallHouse2"]
+transform = Transform3D(7.10606, 0.390296, 0.0285098, 0.0408305, 0.0854823, -3.99904, 0.312885, 5.02776, 0.0686812, -1.9024, 3.49286, -9.79279)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.0492435, -0.591624, -0.639527, 1.32635, -0.023947, -0.0521739, 0.0230252, -1.50072, 0.788114, 0.985035, 1.70221, -5.30844)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(0.0248647, 0.623048, 0.623831, -1.32681, 0.0765849, 0.00652096, -0.0329314, -1.48617, 0.802266, 2.32064, 1.60468, -5.25485)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(0.0950243, 0.496576, -0.0193608, -1.10818, 0.0606383, -0.0938544, -0.0308298, -0.00859392, 2.84086, 2.81433, 1.47534, -1.73491)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(0.937778, 0.0342495, 0.0331912, -0.0580419, 0.621976, -0.0720138, -0.00122377, 0.000285193, 3.34322, 1.62597, 2.87126, -1.831)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.938593, -0.0185222, -0.0557276, 0.0120166, -0.62292, -0.0201604, -0.0188841, -0.0268642, 3.34342, 1.72276, 0.292038, -1.75077)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Village/tallHouse2/HouseCollision2"]
+transform = Transform3D(-0.0737252, -0.444568, 0.00278765, 1.31132, -0.0283572, 0.0196915, 0.0177198, -0.0185049, 3.34487, 0.591125, 1.58679, -1.25816)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/tallHouse2/HouseCollision2/MeshInstance3D14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(-0.374692, 0, 0.298512, 0, 0.458844, 0, -0.256308, 0, -0.388841, -226.236, -0.263343, 375.924)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse9" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(0.373822, 0, -0.299827, 0, 0.458844, 0, 0.257576, 0, 0.387828, -215.858, -0.263343, 346.257)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse9"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse9/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse9/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse9/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse9/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse9/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse9/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse9/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse9/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse8" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(0.448161, 0, -0.10455, 0, 0.458844, 0, 0.0723865, 0, 0.478932, -232.657, -0.263343, 340.238)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse8"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse8/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse8/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse8/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse8/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse8/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse8/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse8/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse8/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse7" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(0.42115, 0, -0.207632, 0, 0.458844, 0, 0.169473, 0, 0.444067, -306.208, -0.263343, 198.412)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse7"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse7/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse7/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse7/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse7/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse7/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse7/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse7/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse7/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse6" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(0.256954, 0, -0.418715, 0, 0.458844, 0, 0.37425, 0, 0.25492, -319.243, -0.263343, 262.704)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse6"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse6/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse6/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse6/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse6/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse6/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse6/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse6/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse6/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse5" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(-0.0226106, 0, 0.490205, 0, 0.458844, 0, -0.453406, 0, 0.00243263, -350.343, -0.263343, 243.608)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse5"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse5/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse5/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse5/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse5/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse5/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse5/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse5/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse5/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse4" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(-0.153634, 0, 0.469678, 0, 0.458844, 0, -0.427182, 0, -0.140389, -335.142, -0.263343, 295.734)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse4"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse4/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse4/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse4/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse4/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse4/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse4/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse4/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse4/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse3" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(-0.279509, 0, 0.402225, 0, 0.458844, 0, -0.357719, 0, -0.280217, -296.91, -0.263343, 269.016)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse3"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse3/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse3/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse3/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse3/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse3/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse3/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse3/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse3/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="smallHouse2" parent="Village" instance=ExtResource("8_6iypd")]
+transform = Transform3D(0.448854, 0, 0.0467265, 0, 0.458844, 0, -0.0679541, 0, 0.487979, -269.266, -0.263343, 300.12)
+
+[node name="HouseCollision" type="MeshInstance3D" parent="Village/smallHouse2"]
+transform = Transform3D(8.21607, 0.215423, 0.0297896, 0.046945, 0.0982834, -4.5979, 0.136734, 5.43152, 0.0735379, 0.0796509, 4.09033, -10.4064)
+visible = false
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse2/HouseCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse2/HouseCollision/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Village/smallHouse2/HouseCollision"]
+transform = Transform3D(1, 1.49012e-08, -4.65661e-10, 2.98023e-08, 1, 6.98492e-10, 0, -4.65661e-10, 1, -0.0940704, 3.77703, 0.0797765)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Village/smallHouse2/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, -1.0042, 1.95149, 0.0314617)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Village/smallHouse2/HouseCollision"]
+transform = Transform3D(-0.0652851, -0.765319, -0.0130652, 1.77707, -0.0549398, -0.00959163, 0.0243544, -0.0319502, 1.00248, 0.980568, 1.9477, 0.0516453)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Village/smallHouse2/HouseCollision"]
+transform = Transform3D(-0.149262, -0.582711, 0.525762, 2.13169, -0.063127, 0.0826012, -0.0456465, 1.26124, 0.764333, 0.695587, 1.83366, -1.48078)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Village/smallHouse2/HouseCollision"]
+transform = Transform3D(-0.0688264, -0.52741, -0.560012, 2.13986, -0.0186579, -0.0429363, 0.0372574, -1.33717, 0.690001, -0.700867, 2.0175, -1.55869)
+mesh = SubResource("PlaneMesh_tereu")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village/smallHouse2/HouseCollision/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cdqbm")
+
+[node name="castle" parent="Village" instance=ExtResource("11_tereu")]
+transform = Transform3D(-0.0471003, 0, 0.280349, 0, 0.284278, 0, -0.280349, 0, -0.0471003, -115.57, 0.0525069, 336.039)
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="Player" method="_on_button_pressed"]
