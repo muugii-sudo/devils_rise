@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cq25h7cp66ser"
+path.s3tc="res://.godot/imported/spruce2_HD-wallpaper-bark-tree-texture-relief_1.jpg-e75e7eb277337b7b9e7043c8675edbbf.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1c361fba7e9b99b967a1234cb7b42b61"
+}
+
+[deps]
+
+source_file="res://spruce2_HD-wallpaper-bark-tree-texture-relief_1.jpg"
+dest_files=["res://.godot/imported/spruce2_HD-wallpaper-bark-tree-texture-relief_1.jpg-e75e7eb277337b7b9e7043c8675edbbf.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
