@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://baehysdtb8q6"]
+[gd_scene load_steps=9 format=3 uid="uid://cqbvwjsxfyivw"]
 
 [ext_resource type="Script" uid="uid://d050dtpb7kegc" path="res://npc.gd" id="1_ideak"]
-[ext_resource type="Script" uid="uid://boyliwki2r1o4" path="res://npc_talk.gd" id="2_xxcha"]
+[ext_resource type="Script" path="res://npc_talk.gd" id="2_xxcha"]
 [ext_resource type="PackedScene" uid="uid://cfbnndno35brl" path="res://speech_bubble.tscn" id="3_kh24r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xxcha"]
@@ -35,7 +35,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_xxcha")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(6.73976, 0, 0, 0, 6.73976, 0, 0, 0, 6.73976, 0, 0, 0)
 shape = SubResource("SphereShape3D_kh24r")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

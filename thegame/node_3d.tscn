@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://dwxl800jjd1jh" path="res://Terrain.tscn" id="2_noarx"]
-[ext_resource type="PackedScene" path="res://npc.tscn" id="4_6iypd"]
+[ext_resource type="PackedScene" uid="uid://cqbvwjsxfyivw" path="res://npc.tscn" id="4_6iypd"]
 [ext_resource type="Script" uid="uid://cu4ur5v1vkag2" path="res://npc2.gd" id="5_ealrb"]
 [ext_resource type="PackedScene" uid="uid://bef1o6f4uxa44" path="res://house.glb" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://8fbew62p03k7" path="res://house4.glb" id="6_jsk3o"]
