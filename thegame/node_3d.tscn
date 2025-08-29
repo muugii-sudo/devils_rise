@@ -2255,211 +2255,211 @@ transform = Transform3D(4.11327, 0, 0, 0, 4.11327, 0, 0, 0, 4.11327, -151.112, 2
 [node name="Devilsrise" parent="." instance=ExtResource("18_i0g27")]
 transform = Transform3D(-34.492, 0, 20.1111, 0, 39.9269, 0, -20.1111, 0, -34.492, 5.32808, 86.0179, 36.0089)
 
-[node name="wall_doorway" type="Node3D" parent="." instance=ExtResource("19_obt1j")]
+[node name="wall_doorway" parent="." instance=ExtResource("19_obt1j")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -282.869, 0.032922, 324.614)
 metadata/asset_placer_res_id = "uid://c4gtufswwrenw"
 
-[node name="wall_cracked" type="Node3D" parent="." instance=ExtResource("20_2yde8")]
+[node name="wall_cracked" parent="." instance=ExtResource("20_2yde8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -277.328, 0.032922, 322.312)
 metadata/asset_placer_res_id = "uid://c63gwfrq12uty"
 
-[node name="wall_cracked (1)" type="Node3D" parent="." instance=ExtResource("20_2yde8")]
+[node name="wall_cracked (1)" parent="." instance=ExtResource("20_2yde8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -288.409, 0.032922, 326.916)
 metadata/asset_placer_res_id = "uid://c63gwfrq12uty"
 
-[node name="wall_corner_small" type="Node3D" parent="." instance=ExtResource("21_id0nj")]
+[node name="wall_corner_small" parent="." instance=ExtResource("21_id0nj")]
 transform = Transform3D(-1.38518, 0, -0.575573, 0, 1.5, 0, 0.575573, 0, -1.38518, -292.103, 0.0329221, 328.451)
 metadata/asset_placer_res_id = "uid://48xs0l5opy3m"
 
-[node name="wall_corner_small (1)" type="Node3D" parent="." instance=ExtResource("21_id0nj")]
+[node name="wall_corner_small (1)" parent="." instance=ExtResource("21_id0nj")]
 transform = Transform3D(0.575573, 0, -1.38518, 0, 1.5, 0, 1.38518, 0, 0.575573, -273.634, 0.0329221, 320.777)
 metadata/asset_placer_res_id = "uid://48xs0l5opy3m"
 
-[node name="wall_cracked (2)" type="Node3D" parent="." instance=ExtResource("20_2yde8")]
+[node name="wall_cracked (2)" parent="." instance=ExtResource("20_2yde8")]
 transform = Transform3D(0.575573, 0, -1.38518, 0, 1.5, 0, 1.38518, 0, 0.575573, -275.169, 0.032922, 317.083)
 metadata/asset_placer_res_id = "uid://c63gwfrq12uty"
 
-[node name="wall_archedwindow_gated" type="Node3D" parent="." instance=ExtResource("22_1q667")]
+[node name="wall_archedwindow_gated" parent="." instance=ExtResource("22_1q667")]
 transform = Transform3D(0.575573, 0, -1.38518, 0, 1.5, 0, 1.38518, 0, 0.575573, -277.471, 0.032922, 311.543)
 metadata/asset_placer_res_id = "uid://dsk7714koh7h1"
 
-[node name="wall_broken" type="Node3D" parent="." instance=ExtResource("23_ype4i")]
+[node name="wall_broken" parent="." instance=ExtResource("23_ype4i")]
 transform = Transform3D(0.575573, 0, -1.38518, 0, 1.5, 0, 1.38518, 0, 0.575573, -279.773, 0.032922, 306.002)
 metadata/asset_placer_res_id = "uid://cut1psujdarvp"
 
-[node name="wall_corner_small (3)" type="Node3D" parent="." instance=ExtResource("21_id0nj")]
+[node name="wall_corner_small (3)" parent="." instance=ExtResource("21_id0nj")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -281.308, 0.0329221, 302.308)
 metadata/asset_placer_res_id = "uid://48xs0l5opy3m"
 
-[node name="wall_archedwindow_open" type="Node3D" parent="." instance=ExtResource("24_riyl1")]
+[node name="wall_archedwindow_open" parent="." instance=ExtResource("24_riyl1")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -285.002, 0.032922, 303.843)
 metadata/asset_placer_res_id = "uid://bbdg0ju6qjhyp"
 
-[node name="wall_Tsplit" type="Node3D" parent="." instance=ExtResource("25_pb8dk")]
+[node name="wall_Tsplit" parent="." instance=ExtResource("25_pb8dk")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -290.543, 0.0329224, 306.145)
 metadata/asset_placer_res_id = "uid://swojvs71iett"
 
-[node name="wall" type="Node3D" parent="." instance=ExtResource("26_2mu51")]
+[node name="wall" parent="." instance=ExtResource("26_2mu51")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -296.084, 0.032922, 308.447)
 metadata/asset_placer_res_id = "uid://qenynv0sg438"
 
-[node name="@Node3D@34044" type="Node3D" parent="." instance=ExtResource("21_id0nj")]
+[node name="@Node3D@34044" parent="." instance=ExtResource("21_id0nj")]
 transform = Transform3D(-0.575573, 0, 1.38518, 0, 1.5, 0, -1.38518, 0, -0.575573, -299.777, 0.0329221, 309.982)
 metadata/asset_placer_res_id = "uid://48xs0l5opy3m"
 
-[node name="wall_cracked (3)" type="Node3D" parent="." instance=ExtResource("20_2yde8")]
+[node name="wall_cracked (3)" parent="." instance=ExtResource("20_2yde8")]
 transform = Transform3D(-0.575573, 0, 1.38518, 0, 1.5, 0, -1.38518, 0, -0.575573, -298.242, 0.032922, 313.676)
 metadata/asset_placer_res_id = "uid://c63gwfrq12uty"
 
-[node name="wall_Tsplit (1)" type="Node3D" parent="." instance=ExtResource("25_pb8dk")]
+[node name="wall_Tsplit (1)" parent="." instance=ExtResource("25_pb8dk")]
 transform = Transform3D(-0.575573, 0, 1.38518, 0, 1.5, 0, -1.38518, 0, -0.575573, -295.94, 0.0329224, 319.217)
 metadata/asset_placer_res_id = "uid://swojvs71iett"
 
-[node name="wall (1)" type="Node3D" parent="." instance=ExtResource("26_2mu51")]
+[node name="wall (1)" parent="." instance=ExtResource("26_2mu51")]
 transform = Transform3D(-0.575573, 0, 1.38518, 0, 1.5, 0, -1.38518, 0, -0.575573, -293.638, 0.032922, 324.758)
 metadata/asset_placer_res_id = "uid://qenynv0sg438"
 
-[node name="wall (2)" type="Node3D" parent="." instance=ExtResource("26_2mu51")]
+[node name="wall (2)" parent="." instance=ExtResource("26_2mu51")]
 transform = Transform3D(-1.38518, 0, -0.575573, 0, 1.5, 0, 0.575573, 0, -1.38518, -290.399, 0.032922, 316.915)
 metadata/asset_placer_res_id = "uid://qenynv0sg438"
 
-[node name="wall_doorway (1)" type="Node3D" parent="." instance=ExtResource("19_obt1j")]
+[node name="wall_doorway (1)" parent="." instance=ExtResource("19_obt1j")]
 transform = Transform3D(-0.575573, 0, 1.38518, 0, 1.5, 0, -1.38518, 0, -0.575573, -288.241, 0.032922, 311.686)
 metadata/asset_placer_res_id = "uid://c4gtufswwrenw"
 
-[node name="wall_corner_small (4)" type="Node3D" parent="." instance=ExtResource("21_id0nj")]
+[node name="wall_corner_small (4)" parent="." instance=ExtResource("21_id0nj")]
 transform = Transform3D(0.575573, 0, -1.38518, 0, 1.5, 0, 1.38518, 0, 0.575573, -286.706, 0.0329221, 315.38)
 metadata/asset_placer_res_id = "uid://48xs0l5opy3m"
 
-[node name="floor_wood_small_dark" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -297.163, 0.182922, 311.062)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (1)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (1)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -294.393, 0.182922, 309.911)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (2)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (2)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -291.622, 0.182922, 308.759)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (3)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (3)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -290.471, 0.182922, 311.53)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (4)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (4)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -293.242, 0.182922, 312.681)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (5)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (5)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -296.012, 0.182922, 313.832)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (6)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (6)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -294.861, 0.182922, 316.602)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (7)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (7)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -292.09, 0.182922, 315.451)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (8)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (8)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -289.32, 0.182922, 314.3)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (9)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (9)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -286.55, 0.182922, 313.149)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (10)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (10)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -287.701, 0.182922, 310.379)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (11)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (11)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -288.852, 0.182922, 307.608)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (12)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (12)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -286.082, 0.182922, 306.457)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (13)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (13)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -284.93, 0.182922, 309.228)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (14)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (14)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -283.779, 0.182922, 311.998)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_large_dark" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -282.928, 0.182923, 306.229)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (1)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (1)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -280.625, 0.182923, 311.77)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (2)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (2)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -278.323, 0.182923, 317.311)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_small_dark (15)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (15)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -276.248, 0.182922, 319.698)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (16)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (16)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -279.019, 0.182922, 320.849)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (17)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (17)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -281.789, 0.182922, 322)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (18)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (18)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -284.559, 0.182922, 323.151)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (19)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (19)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -287.33, 0.182922, 324.302)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (20)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (20)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -290.1, 0.182922, 325.453)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (21)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (21)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -291.024, 0.182922, 325.837)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_large_dark (3)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (3)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -284.247, 0.182923, 318.69)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (4)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (4)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -289.788, 0.182923, 320.992)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (5)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (5)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -291.635, 0.182923, 321.759)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (6)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (6)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -285.782, 0.182923, 314.996)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (7)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (7)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -290.399, 0.182923, 316.915)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_large_dark (8)" type="Node3D" parent="." instance=ExtResource("28_4i7mf")]
+[node name="floor_wood_large_dark (8)" parent="." instance=ExtResource("28_4i7mf")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -292.786, 0.182923, 318.989)
 metadata/asset_placer_res_id = "uid://dqb8vmwjxgnv3"
 
-[node name="floor_wood_small_dark (22)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (22)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -285.099, 0.182922, 324.458)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 
-[node name="floor_wood_small_dark (23)" type="Node3D" parent="." instance=ExtResource("27_vmvb8")]
+[node name="floor_wood_small_dark (23)" parent="." instance=ExtResource("27_vmvb8")]
 transform = Transform3D(1.38518, 0, 0.575573, 0, 1.5, 0, -0.575573, 0, 1.38518, -282.329, 0.182922, 323.307)
 metadata/asset_placer_res_id = "uid://35bbutcih4j3"
 

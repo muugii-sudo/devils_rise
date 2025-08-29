@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://40uex1s5t7pt"]
+[gd_scene load_steps=9 format=3 uid="uid://40uex1s5t7pt"]
 
 [ext_resource type="Script" uid="uid://dmkw60vx562nk" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://mm8vs7ghlaqh" path="res://right_arm_2.gd" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://bth5qlve5203a" path="res://left_arm.gd" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://d0j6fniyslqmc" path="res://KayKit_HalloweenBits_1.0_FREE/Assets/fbx/candle.fbx" id="4_hqtel"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
@@ -70,3 +71,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215499, 0)
 
 [node name="WallRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.1, 0)
+
+[node name="candle" type="Node3D" parent="." instance=ExtResource("4_hqtel")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"
+
+[node name="candle (1)" type="Node3D" parent="." instance=ExtResource("4_hqtel")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"
+
+[node name="candle (2)" type="Node3D" parent="." instance=ExtResource("4_hqtel")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"

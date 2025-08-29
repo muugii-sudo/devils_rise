@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://baehysdtb8q6"]
+[gd_scene load_steps=10 format=3 uid="uid://baehysdtb8q6"]
 
 [ext_resource type="Script" uid="uid://d050dtpb7kegc" path="res://npc.gd" id="1_ideak"]
 [ext_resource type="Script" uid="uid://boyliwki2r1o4" path="res://npc_talk.gd" id="2_xxcha"]
 [ext_resource type="PackedScene" uid="uid://cfbnndno35brl" path="res://speech_bubble.tscn" id="3_kh24r"]
+[ext_resource type="PackedScene" uid="uid://d0j6fniyslqmc" path="res://KayKit_HalloweenBits_1.0_FREE/Assets/fbx/candle.fbx" id="4_ul7y6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xxcha"]
 
@@ -43,3 +44,19 @@ shape = SubResource("SphereShape3D_kh24r")
 [node name="SpeechBubble" parent="." instance=ExtResource("3_kh24r")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.43578, 0)
 visible = false
+
+[node name="candle" type="Node3D" parent="." instance=ExtResource("4_ul7y6")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"
+
+[node name="candle (1)" type="Node3D" parent="." instance=ExtResource("4_ul7y6")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"
+
+[node name="candle (2)" type="Node3D" parent="." instance=ExtResource("4_ul7y6")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"
+
+[node name="candle (3)" type="Node3D" parent="." instance=ExtResource("4_ul7y6")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
+metadata/asset_placer_res_id = "uid://d0j6fniyslqmc"
