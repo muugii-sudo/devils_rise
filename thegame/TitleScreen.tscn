@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://deq7inennqsta"]
+[gd_scene load_steps=4 format=3 uid="uid://deq7inennqsta"]
 
 [ext_resource type="Script" uid="uid://gjg51m7opn8b" path="res://title_screen.gd" id="1_fnlyl"]
+[ext_resource type="Texture2D" uid="uid://dfbohem5qckn3" path="res://addons/zylann.hterrain/tools/titscreen.png" id="2_pkhjh"]
+[ext_resource type="Texture2D" uid="uid://dkis8habnonuy" path="res://addons/zylann.hterrain/Adobe Express - file.png" id="3_1xr1c"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -11,22 +13,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fnlyl")
 
-[node name="StartButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 37.0
-offset_right = 590.0
-offset_bottom = 127.0
-text = "start"
+[node name="Titscreen" type="Sprite2D" parent="."]
+position = Vector2(571.5, 319)
+scale = Vector2(1.02964, 1.04524)
+texture = ExtResource("2_pkhjh")
 
 [node name="Quitbutton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 396.0
-offset_top = 154.0
-offset_right = 594.0
-offset_bottom = 244.0
+offset_left = 137.0
+offset_top = 327.0
+offset_right = 335.0
+offset_bottom = 417.0
 text = "quit
 "
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 211.0
+offset_right = 335.0
+offset_bottom = 301.0
+text = "start"
+
+[node name="AdobeExpress-File" type="Sprite2D" parent="."]
+position = Vector2(252, 103)
+scale = Vector2(0.776596, 0.815315)
+texture = ExtResource("3_1xr1c")
+
 [connection signal="pressed" from="Quitbutton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

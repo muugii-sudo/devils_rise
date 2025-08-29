@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://dihe2alxjbq34"]
+[gd_scene load_steps=31 format=3 uid="uid://dihe2alxjbq34"]
 
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://dwxl800jjd1jh" path="res://Terrain.tscn" id="2_noarx"]
 [ext_resource type="PackedScene" path="res://npc.tscn" id="4_6iypd"]
+[ext_resource type="Script" uid="uid://cu4ur5v1vkag2" path="res://npc2.gd" id="5_ealrb"]
 [ext_resource type="PackedScene" uid="uid://bef1o6f4uxa44" path="res://house.glb" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://8fbew62p03k7" path="res://house4.glb" id="6_jsk3o"]
 [ext_resource type="PackedScene" uid="uid://c4yx4s8i0iyxo" path="res://house3.glb" id="7_4arys"]
@@ -101,7 +102,7 @@ mesh = SubResource("BoxMesh_a202f")
 shape = SubResource("ConvexPolygonShape3D_a0tk4")
 
 [node name="Player" parent="." instance=ExtResource("1_a202f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302.291, 2.03971, 362.308)
+transform = Transform3D(-0.786127, 0, 0.618065, 0, 1, 0, -0.618065, 0, -0.786127, -307.473, -0.0890055, 328.629)
 
 [node name="HTerrain" parent="." instance=ExtResource("2_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500002, 0)
@@ -145,6 +146,10 @@ text = "RESTART"
 
 [node name="NPC" parent="." instance=ExtResource("4_6iypd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.431, 0.587718, 333.059)
+
+[node name="NPC2" parent="." instance=ExtResource("4_6iypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.485, 0.587718, 322.626)
+script = ExtResource("5_ealrb")
 
 [node name="Village" type="MeshInstance3D" parent="."]
 
