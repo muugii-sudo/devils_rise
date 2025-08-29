@@ -75,9 +75,9 @@ func _face_target(target: Vector3, delta: float):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player = body
-		say("Hello BITHC")
+		say("You can jump with 'Space'")
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player = null
-		say("BYE BYE poopoo")
+		say("FUCK YOU ASS")

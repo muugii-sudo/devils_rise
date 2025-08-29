@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dihe2alxjbq34"]
+[gd_scene load_steps=39 format=3 uid="uid://dihe2alxjbq34"]
 
 [ext_resource type="Texture2D" uid="uid://6fr5iekdk2ag" path="res://noise2.png" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://40uex1s5t7pt" path="res://player.tscn" id="1_a202f"]
@@ -7,8 +7,12 @@
 [ext_resource type="Script" uid="uid://cu4ur5v1vkag2" path="res://npc2.gd" id="5_ealrb"]
 [ext_resource type="PackedScene" uid="uid://bef1o6f4uxa44" path="res://house.glb" id="5_jka67"]
 [ext_resource type="PackedScene" uid="uid://8fbew62p03k7" path="res://house4.glb" id="6_jsk3o"]
+[ext_resource type="Script" uid="uid://of3gokw2nl7e" path="res://tut1.gd" id="6_jsnrv"]
 [ext_resource type="PackedScene" uid="uid://c4yx4s8i0iyxo" path="res://house3.glb" id="7_4arys"]
+[ext_resource type="Script" uid="uid://b5m1r7b1dccb2" path="res://npc3.gd" id="7_s0gvp"]
 [ext_resource type="PackedScene" uid="uid://fvoah7u5j1nc" path="res://house2.glb" id="8_6iypd"]
+[ext_resource type="Script" uid="uid://cti3oauwyyhhq" path="res://npc4.gd" id="8_dhlwf"]
+[ext_resource type="Script" uid="uid://d3xa1xpxdc0rd" path="res://npc6.gd" id="9_5t8nk"]
 [ext_resource type="PackedScene" uid="uid://dj0r6x3ujtwy1" path="res://tree.glb" id="11_cdqbm"]
 [ext_resource type="PackedScene" uid="uid://b04b7o1y40mys" path="res://Untitled.glb" id="11_tereu"]
 [ext_resource type="PackedScene" uid="uid://c77sivsaliddt" path="res://GuyInBed.glb" id="12_cdqbm"]
@@ -19,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ddm8wyyikh7te" path="res://rock2.glb" id="15_tuemg"]
 [ext_resource type="PackedScene" uid="uid://bfum8du0ef1u6" path="res://spruce2.glb" id="16_tcnuu"]
 [ext_resource type="PackedScene" uid="uid://dwcyed6k7n7tk" path="res://Devilsrise.glb" id="18_i0g27"]
+[ext_resource type="Texture2D" uid="uid://ob878dvyicdg" path="res://house2_tree.jpg" id="22_vxd74"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r3fl7"]
 sky_horizon_color = Color(0.816507, 0.860295, 1.00995, 1)
@@ -56,7 +61,16 @@ points = PackedVector3Array(25.5952, 38.0952, 1.28571, -25.5952, -38.0952, -1.09
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cdqbm"]
 points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhlwf"]
+albedo_texture = ExtResource("22_vxd74")
+
+[sub_resource type="BoxMesh" id="BoxMesh_jsnrv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lggff"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510452, -1.24438, 0.985764)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i5arm")
@@ -150,6 +164,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.431, 0.587718, 333.059)
 [node name="NPC2" parent="." instance=ExtResource("4_6iypd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.485, 0.587718, 322.626)
 script = ExtResource("5_ealrb")
+
+[node name="NPC3" parent="." instance=ExtResource("4_6iypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -224.127, 0.587718, 275.467)
+script = ExtResource("6_jsnrv")
+
+[node name="NPC4" parent="." instance=ExtResource("4_6iypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.291, 0.587718, 315.165)
+script = ExtResource("7_s0gvp")
+
+[node name="NPC5" parent="." instance=ExtResource("4_6iypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -207.282, 0.587718, 286.801)
+script = ExtResource("8_dhlwf")
+
+[node name="NPC6" parent="." instance=ExtResource("4_6iypd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.222, 0.587718, 327.469)
+script = ExtResource("9_5t8nk")
+wander_radius = 3.0
 
 [node name="Village" type="MeshInstance3D" parent="."]
 
@@ -2117,7 +2148,7 @@ transform = Transform3D(0.529436, -0.20316, -0.823665, 0.225215, 0.969723, -0.09
 transform = Transform3D(0.500514, 0, 0.865729, 0, 1, 0, -0.865729, 0, 0.500514, 69.2778, 0.372999, 82.8973)
 
 [node name="Sign" parent="Village" instance=ExtResource("11_tereu")]
-transform = Transform3D(-0.109903, 0, 0.396378, 0, 0.411332, 0, -0.396378, 0, -0.109903, -287.644, -0.487046, 330.19)
+transform = Transform3D(0.405931, 0, 0.0664374, 0, 0.411332, 0, -0.0664374, 0, 0.405931, -287.644, -0.487046, 330.19)
 
 [node name="GuyInBed" parent="Village" instance=ExtResource("12_cdqbm")]
 transform = Transform3D(0.312992, 0, -0.108487, 0, 0.33126, 0, 0.108487, 0, 0.312992, -309.138, -0.501676, 330.724)
@@ -2252,5 +2283,15 @@ transform = Transform3D(4.11327, 0, 0, 0, 4.11327, 0, 0, 0, 4.11327, -151.112, 2
 
 [node name="Devilsrise" parent="." instance=ExtResource("18_i0g27")]
 transform = Transform3D(-34.492, 0, 20.1111, 0, 39.9269, 0, -20.1111, 0, -34.492, 5.32808, 86.0179, 36.0089)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.9196, 0, 0.131112, 0, 8.78282, 0, -2.4951, 0, 0.573799, -231.253, 3.10603, 323.408)
+material_override = SubResource("StandardMaterial3D_dhlwf")
+mesh = SubResource("BoxMesh_jsnrv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_lggff")
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="Player" method="_on_button_pressed"]

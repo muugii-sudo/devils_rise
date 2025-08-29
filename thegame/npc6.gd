@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var wander_radius: float = 10.0      # How far the NPC can wander from start
+@export var wander_radius: float = 3.0      # How far the NPC can wander from start
 @export var speed: float = 2.5               # Wander speed
 @export var wait_time_min: float = 1.0       # Minimum wait time
 @export var wait_time_max: float = 3.0       # Maximum wait time
@@ -75,9 +75,9 @@ func _face_target(target: Vector3, delta: float):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player = body
-		say("Use 'Shift' to run significantly faster!")
+		say("Hey son... hope you can find your dad out there...")
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player = null
-		say("Try it out!")
+		say("Maybe try talking to the other villagers for some advice!")

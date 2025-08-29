@@ -75,9 +75,9 @@ func _face_target(target: Vector3, delta: float):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player = body
-		say("Use 'Shift' to run significantly faster!")
+		say("To climb a sloped surface, press 'W' into them!")
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player = null
-		say("Try it out!")
+		say("Good Luck!")
